@@ -5,8 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "test": "mocha",
-    "coverage": "istanbul cover _mocha"
+       
   },
   "author": "Danil Skachkov <danil.skachkov@speaktoit.com> (https://api.ai)",
   "license": "ISC",
