@@ -4,9 +4,7 @@
   "description": "API.AI Facebook Bot",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "test": "mocha",
-    "coverage": "istanbul cover _mocha"
+    "start": "node app.js"       
   },
   "author": "Danil Skachkov <danil.skachkov@speaktoit.com> (https://api.ai)",
   "license": "ISC",
