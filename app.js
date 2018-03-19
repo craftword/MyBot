@@ -10,12 +10,12 @@ const JSONbig = require('json-bigint');
 const async = require('async');
 
 const REST_PORT = (process.env.PORT || 5000);
-const APIAI_ACCESS_TOKEN = process.env.APIAI_ACCESS_TOKEN;
+const APIAI_ACCESS_TOKEN = '2bd59f7424bc4440a735229ab6c68b89';
 const APIAI_LANG = process.env.APIAI_LANG || 'en';
-const FB_VERIFY_TOKEN = process.env.FB_VERIFY_TOKEN;
-const FB_PAGE_ACCESS_TOKEN = process.env.FB_PAGE_ACCESS_TOKEN;
+const FB_VERIFY_TOKEN = 'test_token';
+const FB_PAGE_ACCESS_TOKEN = 'EAATWJ1zjxdkBABRjb3wkZCBmJMOHF2lkZCt1tRyg2cGoFpbCbHDq2kA5ZCVZCRbZCCZAH3mGEGDite0faagS795WGQmDQIwL2e3TndTZBsd7eZC7EZBvQF60ZB7pnwnWLamf3zjEvGt9FAQnZBjwsKPgOOvM7MUtppZCIimxzjuqcXA9pAZDZD';
 const FB_TEXT_LIMIT = 640;
-const NEWS_API = process.env.NEWS_API;
+const NEWS_API = 'f7fb2fb15b24480ba39b5795c846ed59';
 
 const FACEBOOK_LOCATION = "FACEBOOK_LOCATION";
 const FACEBOOK_WELCOME = "FACEBOOK_WELCOME";
@@ -389,6 +389,16 @@ class FacebookBot {
                     recipient: {id: sender},
                     message: messageData
                 }
+            }, (error, response) => {
+                if (error) {
+                    console.log('Error sending message: ', error);
+                    reject(error);
+                } else if (response.body.error) {
+                    console.log('Error: ', response.body.error);
+                    reject(new Error(response.body.error));
+                }
+
+                resolve();
             });
         });
     }
@@ -403,6 +413,16 @@ class FacebookBot {
                     recipient: {id: sender},
                     sender_action: action
                 }
+            }, (error, response) => {
+                if (error) {
+                    console.error('Error sending action: ', error);
+                    reject(error);
+                } else if (response.body.error) {
+                    console.error('Error: ', response.body.error);
+                    reject(new Error(response.body.error));
+                }
+
+                resolve();
             });
         });
     }
