@@ -620,6 +620,7 @@ app.post('/news', (req, res) => {
     return elements;
 
  }
+ 
 
 app.listen(REST_PORT, () => {
     console.log('Rest service ready on port ' + REST_PORT);
