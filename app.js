@@ -216,7 +216,7 @@ class FacebookBot {
                         resolve();
                     }
                 });
-        }).catch(console.error);
+        });
 
     }
 
@@ -389,18 +389,8 @@ class FacebookBot {
                     recipient: {id: sender},
                     message: messageData
                 }
-            }, (error, response) => {
-                if (error) {
-                    console.log('Error sending message: ', error);
-                    reject(error);
-                } else if (response.body.error) {
-                    console.log('Error: ', response.body.error);
-                    reject(new Error(response.body.error));
-                }
-
-                resolve();
             });
-        }).catch(console.error);
+        });
     }
 
     sendFBSenderAction(sender, action) {
@@ -413,18 +403,8 @@ class FacebookBot {
                     recipient: {id: sender},
                     sender_action: action
                 }
-            }, (error, response) => {
-                if (error) {
-                    console.error('Error sending action: ', error);
-                    reject(error);
-                } else if (response.body.error) {
-                    console.error('Error: ', response.body.error);
-                    reject(new Error(response.body.error));
-                }
-
-                resolve();
             });
-        }).catch(console.error);
+        });
     }
 
     doSubscribeRequest() {
