@@ -1,7 +1,7 @@
 {
-  "name": "My Bot",
+  "name": "my-bot",
   "version": "1.1.0",
-  "description": "My Bot",
+  "description": "my-bot",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"       
