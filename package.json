@@ -1,12 +1,12 @@
 {
-  "name": "api-ai-facebook",
+  "name": "my-bot",
   "version": "1.1.0",
-  "description": "API.AI Facebook Bot",
+  "description": "my-bot",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"       
   },
-  "author": "Danil Skachkov <danil.skachkov@speaktoit.com> (https://api.ai)",
+  "author": "Abimbola Olaitan",
   "license": "ISC",
   "dependencies": {
     "apiai": "^3.0.3",
