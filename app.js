@@ -216,7 +216,7 @@ class FacebookBot {
                         resolve();
                     }
                 });
-        });
+        }).catch(console.error);
 
     }
 
@@ -400,7 +400,7 @@ class FacebookBot {
 
                 resolve();
             });
-        });
+        }).catch(console.error);
     }
 
     sendFBSenderAction(sender, action) {
@@ -424,7 +424,7 @@ class FacebookBot {
 
                 resolve();
             });
-        });
+        }).catch(console.error);
     }
 
     doSubscribeRequest() {
@@ -490,6 +490,7 @@ let facebookBot = new FacebookBot();
 const app = express();
 
 app.use(bodyParser.text({type: 'application/json'}));
+
 
 app.get('/webhook/', (req, res) => {
     if (req.query['hub.verify_token'] === FB_VERIFY_TOKEN) {
@@ -620,7 +621,7 @@ app.post('/news', (req, res) => {
     return elements;
 
  }
- 
+
 
 app.listen(REST_PORT, () => {
     console.log('Rest service ready on port ' + REST_PORT);
